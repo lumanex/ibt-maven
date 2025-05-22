@@ -12,9 +12,9 @@ pipeline {
                 echo 'Hi Emma'
             }
         }
-        stage('greet') {
+        stage('DevOps') {
             steps {
-                echo 'you are a good boy'
+                echo 'you will make it in tech'
             }
         }
         stage('Geology') {
@@ -27,7 +27,7 @@ pipeline {
                 git branch: 'main',
                     credentialsId: 'Github-credential',
                     url: 'https://github.com/lumanex/ibt-maven.git'
-                sh 'ls -lrt'
+                sh 'ls -al'
             }
         }
     }
