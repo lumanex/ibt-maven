@@ -17,5 +17,10 @@ pipeline {
                 echo 'you are a good boy'
             }
         }
+        stage('Geology') {
+            steps {
+                echo 'your cgpa is 2.69'
+            }
+        }
     }
 }
