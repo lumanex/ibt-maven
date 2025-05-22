@@ -24,8 +24,10 @@ pipeline {
         }
         stage('Git') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-credential', url: 'https://github.com/lumanex/ibt-maven.git']])
-                sh ls -lrt
+                git branch: 'main',
+                    credentialsId: 'Github-credential',
+                    url: 'https://github.com/lumanex/ibt-maven.git'
+                sh 'ls -lrt'
             }
         }
     }
