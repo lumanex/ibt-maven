@@ -32,6 +32,7 @@ pipeline {
                 sh 'ls -lrt'
                 sh 'echo $Branch_Name  $CHOICES'
                 sh 'ls -al'
+                sh 'echo $Branch_Name'
             }
         }
         
