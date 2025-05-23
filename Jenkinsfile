@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters{
-        string(name:'Branch_Name', defaultvalue:'main', description:'enter the branch to checkout')
+        string(name:'Branch_Name', defaultValue:'main', description:'enter the branch to checkout')
         choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: 'choose a number') 
     }
 
@@ -28,8 +28,9 @@ pipeline {
         }
         stage('Git') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-credential', url: 'https://github.com/lumanex/ibt-maven.git']])
+                checkout scmGit(branches: [[name: '*/$Branch_Name']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-credential', url: 'https://github.com/lumanex/ibt-maven.git']])
                 sh 'ls -lrt'
+                sh 'echo: $Branch_Name  $CHOICES'
             }
         }
         
