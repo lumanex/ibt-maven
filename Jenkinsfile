@@ -31,6 +31,7 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/$Branch_Name']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-credential', url: 'https://github.com/lumanex/ibt-maven.git']])
                 sh 'ls -lrt'
                 sh 'echo $Branch_Name  $CHOICES'
+                sh 'ls -al'
             }
         }
         
