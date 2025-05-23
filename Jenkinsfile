@@ -36,6 +36,11 @@ pipeline {
                 
             }
         }
+        stage('hook') {
+            steps {
+                echo 'webhook'
+            }
+        }
         
     }
 }
